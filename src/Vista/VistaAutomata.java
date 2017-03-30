@@ -75,7 +75,7 @@ public class VistaAutomata extends javax.swing.JFrame {
  
     private void configurarTabla() {
         this.scrollPane.setSize(400, 400); 
-        tableModel.addColumn("");
+        tableModel.addColumn("");//SASASASASASASASASAS
         for (int i = 0; i < automata.getSimbolos().size(); i++) {
             tableModel.addColumn(automata.getSimbolos().get(i));
         }

@@ -76,6 +76,7 @@ public class VistaSimb extends javax.swing.JFrame {
         }
         return simbolos;
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContinuar;

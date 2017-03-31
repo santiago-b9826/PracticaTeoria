@@ -25,6 +25,7 @@ public class VistaAutomata extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         automata.setSimbolos(simbolos);
         configurarTabla();
+        agregarFilas();
         this.add(this.scrollPane);
     }
 
@@ -64,18 +65,44 @@ public class VistaAutomata extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        ctrlAutomata.simplificar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Ejemplo de agregar Filas
     private void agregarFilas() {
-        this.tableModel.addRow(new Object[]{"Manuel", "Martinez", "Anillo"});
-        this.tableModel.addRow(new Object[]{"Pedro", "Perez", "Puello"});
+        ArrayList<ArrayList> transiciones = new ArrayList<>();
+        ArrayList transiciones2 = new ArrayList<>();
+        this.tableModel.addRow(new Object[]{"0", "1", "2"});
+        transiciones2.add(1);
+        transiciones2.add(2);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"1", "4", "2"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(4);
+        transiciones2.add(2);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"2", "2", "1"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(2);
+        transiciones2.add(1);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"3", "4", "2"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(4);
+        transiciones2.add(2);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"4", "0", "2"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(0);
+        transiciones2.add(2);
+        transiciones.add(transiciones2);
+        automata.setTransiciones(transiciones);
+        
     }
  
     private void configurarTabla() {
         this.scrollPane.setSize(400, 400); 
-        tableModel.addColumn("");//SASASASASASASASASAS
+        tableModel.addColumn("");
         for (int i = 0; i < automata.getSimbolos().size(); i++) {
             tableModel.addColumn(automata.getSimbolos().get(i));
         }

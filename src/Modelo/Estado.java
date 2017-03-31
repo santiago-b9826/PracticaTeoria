@@ -8,6 +8,7 @@ package Modelo;
 public class Estado {
 
     private String dato;
+    private int posicion;
     private int estado;
 
     public String getDato() {
@@ -16,6 +17,14 @@ public class Estado {
 
     public void setDato(String dato) {
         this.dato = dato;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
     }
 
     public int getEstado() {

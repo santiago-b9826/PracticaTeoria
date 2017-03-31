@@ -72,43 +72,62 @@ public class VistaAutomata extends javax.swing.JFrame {
     private void agregarFilas() {
         ArrayList<ArrayList> transiciones = new ArrayList<>();
         ArrayList transiciones2 = new ArrayList<>();
-        this.tableModel.addRow(new Object[]{"0", "1", "2"});
+        this.tableModel.addRow(new Object[]{"0", "1", "5"});
         transiciones2.add(1);
-        transiciones2.add(2);
+        transiciones2.add(5);
         transiciones.add(transiciones2);
-        this.tableModel.addRow(new Object[]{"1", "4", "2"});
-        transiciones2 = new ArrayList<>();
-        transiciones2.add(4);
-        transiciones2.add(2);
-        transiciones.add(transiciones2);
-        this.tableModel.addRow(new Object[]{"2", "2", "1"});
+        this.tableModel.addRow(new Object[]{"1", "2", "7"});
         transiciones2 = new ArrayList<>();
         transiciones2.add(2);
+        transiciones2.add(7);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"2", "2", "5"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(2);
+        transiciones2.add(5);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"3", "5", "7"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(5);
+        transiciones2.add(7);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"4", "5", "6"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(5);
+        transiciones2.add(6);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"5", "3", "1"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(3);
         transiciones2.add(1);
         transiciones.add(transiciones2);
-        this.tableModel.addRow(new Object[]{"3", "4", "2"});
+        this.tableModel.addRow(new Object[]{"6", "8", "0"});
         transiciones2 = new ArrayList<>();
-        transiciones2.add(4);
-        transiciones2.add(2);
+        transiciones2.add(8);
+        transiciones2.add(0);
         transiciones.add(transiciones2);
-        this.tableModel.addRow(new Object[]{"4", "0", "2"});
+        this.tableModel.addRow(new Object[]{"7", "0", "1"});
         transiciones2 = new ArrayList<>();
         transiciones2.add(0);
-        transiciones2.add(2);
+        transiciones2.add(1);
+        transiciones.add(transiciones2);
+        this.tableModel.addRow(new Object[]{"8", "3", "6"});
+        transiciones2 = new ArrayList<>();
+        transiciones2.add(3);
+        transiciones2.add(6);
         transiciones.add(transiciones2);
         automata.setTransiciones(transiciones);
-        
     }
- 
+
     private void configurarTabla() {
-        this.scrollPane.setSize(400, 400); 
+        this.scrollPane.setSize(400, 400);
         tableModel.addColumn("");
         for (int i = 0; i < automata.getSimbolos().size(); i++) {
             tableModel.addColumn(automata.getSimbolos().get(i));
         }
         this.table.setModel(tableModel);
         this.scrollPane.setViewportView(this.table);
-        this.scrollPane.setBounds(45, 40, 400, 400);
+        this.scrollPane.setBounds(45, 40, 500, 200);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
